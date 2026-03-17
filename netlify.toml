@@ -1,6 +1,7 @@
 [build]
-  command = "npx quartz build"
+  command = "pnpm quartz build"
   publish = "public"
 
 [build.environment]
   NODE_VERSION = "22"
+  PNPM_VERSION = "10"
