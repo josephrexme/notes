@@ -1,0 +1,104 @@
+@use "./base.scss";
+
+// Full-width single-column layout
+#quartz-body {
+  // No left sidebar — use full width
+  grid-template-columns: 1fr !important;
+  grid-template-areas:
+    "grid-header"
+    "grid-center"
+    "grid-footer" !important;
+}
+
+// Hide empty sidebars
+.sidebar.left,
+.sidebar.right {
+  display: none !important;
+}
+
+// Page width and padding
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+// Top header bar: site title left, darkmode right
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--lightgray);
+
+  h1.page-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    a {
+      background: none;
+      padding: 0;
+    }
+  }
+}
+
+// Simplify note listings
+.recent-notes h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+  margin-bottom: 1rem;
+  border-bottom: none;
+}
+
+ul.recent-ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+
+  li.recent-li {
+    margin-bottom: 0;
+
+    .section {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--lightgray);
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--gray);
+      white-space: nowrap;
+      margin: 0;
+    }
+
+    .tags {
+      display: none !important;
+    }
+
+    .desc {
+      flex: 1;
+    }
+  }
+}
+
+// Ensure clean link styling
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
